@@ -124,5 +124,17 @@ namespace ProductReviewManagementLinq
                     "\tisLike:" + data.Field<bool>("isLike"));
             }
         }
+
+        /// <summary>
+        /// UC10 Find average rating of each productid
+        /// </summary>
+        public void AverageRatingOfProductId()
+        {
+            var recordedData = dataTable.AsEnumerable().GroupBy(e => e.Field<int>("ProductId")).Select(x => new { ProductId = x.Key, Average = x.Average(y => y.Field<double>("Rating")) });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductId " + list.ProductId + ": Average " + list.Average);
+            }
+        }
     }
 }

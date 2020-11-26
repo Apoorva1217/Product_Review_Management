@@ -44,6 +44,8 @@ namespace ProductReviewManagementLinq
             management.InsertValuesInDataTable(productReview);
             /// UC9 Retrieve All Records from datatable who's isLike value is true
             management.RetrieveDataFromTable();
+            /// UC10 Find average rating of each productid
+            management.AverageRatingOfProductId();
         }
     }
 }

@@ -152,5 +152,30 @@ namespace ProductReviewManagementLinq
                     "\tisLike:" + data.Field<bool>("isLike"));
             }
         }
+
+        /// <summary>
+        /// UC12 Retrieve All Records from list who's userid=10 and orderby rating
+        /// </summary>
+        public void GetRecordsUsingUserId()
+        {
+            dataTable.Rows.Add(5, 10, 4, "Nice", true);
+            dataTable.Rows.Add(2, 10, 2, "Bad", false);
+            dataTable.Rows.Add(6, 10, 5, "Good", true);
+            dataTable.Rows.Add(8, 10, 3, "Average", true);
+            dataTable.Rows.Add(7, 10, 4, "Nice", true);
+            dataTable.Rows.Add(10, 10, 5, "Good", true);
+
+
+            var recordedData = from productReviews in dataTable.AsEnumerable()
+                               where productReviews.Field<int>("UserId") == 10
+                               orderby productReviews.Field<double>("Rating")
+                               select productReviews;
+            foreach (var data in recordedData)
+            {
+                Console.WriteLine("ProductId:" + data.Field<int>("ProductId") + "\tUserId:" + data.Field<int>("UserId") +
+                    "\tRating:" + data.Field<double>("Rating") + "\tReview:" + data.Field<string>("Review") +
+                    "\tisLike:" + data.Field<bool>("isLike"));
+            }
+        }
     }
 }

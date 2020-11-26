@@ -48,6 +48,8 @@ namespace ProductReviewManagementLinq
             management.AverageRatingOfProductId();
             /// UC11 Retrieve All records from list who's review message contain "Nice" in it
             management.RetrieveDataFromTableForNiceMessage();
+            /// UC12 Retrieve All Records from list who's userid=10 and orderby rating
+            management.GetRecordsUsingUserId();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace ProductReviewManagementLinq
         }
 
         /// <summary>
-        /// UC5 Retrieve only productid and review from list for all records
+        /// UC5 UC7 Retrieve only productid and review from list for all records
         /// </summary>
         public void RetrieveProductIdAndReview(List<ProductReview> listProductReview)
         {

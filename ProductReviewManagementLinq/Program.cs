@@ -36,7 +36,7 @@ namespace ProductReviewManagementLinq
             management.SelectRecords(productReview);
             /// UC4 Retrieve Count of review present for each productid
             management.RetrieveCountOfRecords(productReview);
-            /// UC5 Retrieve only productid and review from list for all records
+            /// UC5 UC7 Retrieve only productid and review from list for all records
             management.RetrieveProductIdAndReview(productReview);
             /// UC6 Skip Top 5 records from the list and display other records
             management.SkipTopRecords(productReview);

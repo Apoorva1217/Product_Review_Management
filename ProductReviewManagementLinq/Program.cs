@@ -40,6 +40,8 @@ namespace ProductReviewManagementLinq
             management.RetrieveProductIdAndReview(productReview);
             /// UC6 Skip Top 5 records from the list and display other records
             management.SkipTopRecords(productReview);
+            /// UC8 Create DataTable and add ProductId,UserId,Rating,Review and isLike fields
+            management.InsertValuesInDataTable(productReview);
         }
     }
 }

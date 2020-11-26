@@ -83,5 +83,29 @@ namespace ProductReviewManagementLinq
                     list.Rating + "\tReview:" + list.Review + "\tisLike:" + list.isLike);
             }
         }
+
+        /// <summary>
+        /// UC8 Create DataTable and add ProductId,UserId,Rating,Review and isLike fields
+        /// </summary>
+        /// <param name="listProductReview"></param>
+        public void InsertValuesInDataTable(List<ProductReview> listProductReview)
+        {
+            dataTable.Columns.Add("ProductId", typeof(int));
+            dataTable.Columns.Add("UserId", typeof(int));
+            dataTable.Columns.Add("Rating", typeof(double));
+            dataTable.Columns.Add("Review", typeof(string));
+            dataTable.Columns.Add("isLike", typeof(bool));
+
+            dataTable.Rows.Add(1, 1, 5, "Good", true);
+            dataTable.Rows.Add(2, 2, 4, "Nice", true);
+            dataTable.Rows.Add(3, 3, 3, "Average", true);
+            dataTable.Rows.Add(4, 4, 2, "Bad", false);
+            dataTable.Rows.Add(3, 5, 3.5, "Average", true);
+            dataTable.Rows.Add(2, 6, 4, "Nice", true);
+            dataTable.Rows.Add(6, 7, 2, "Bad", false);
+            dataTable.Rows.Add(7, 8, 3, "Average", true);
+            dataTable.Rows.Add(8, 9, 5, "Good", true);
+            dataTable.Rows.Add(4, 10, 4, "Nice", true);
+        }
     }
 }

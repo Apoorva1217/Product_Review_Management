@@ -136,5 +136,21 @@ namespace ProductReviewManagementLinq
                 Console.WriteLine("ProductId " + list.ProductId + ": Average " + list.Average);
             }
         }
+
+        /// <summary>
+        /// UC11 Retrieve All records from list who's review message contain "Nice" in it
+        /// </summary>
+        public void RetrieveDataFromTableForNiceMessage()
+        {
+            var records = from products in dataTable.AsEnumerable()
+                          where (products.Field<string>("Review") == "Nice")
+                          select products;
+            foreach (var data in records)
+            {
+                Console.WriteLine("ProductId:" + data.Field<int>("ProductId") + "\tUserId:" + data.Field<int>("UserId") +
+                    "\tRating:" + data.Field<double>("Rating") + "\tReview:" + data.Field<string>("Review") +
+                    "\tisLike:" + data.Field<bool>("isLike"));
+            }
+        }
     }
 }

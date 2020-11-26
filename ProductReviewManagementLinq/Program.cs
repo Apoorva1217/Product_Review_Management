@@ -36,6 +36,8 @@ namespace ProductReviewManagementLinq
             management.SelectRecords(productReview);
             /// UC4 Retrieve Count of review present for each productid
             management.RetrieveCountOfRecords(productReview);
+            /// UC5 Retrieve only productid and review from list for all records
+            management.RetrieveProductIdAndReview(productReview);
         }
     }
 }

@@ -34,6 +34,8 @@ namespace ProductReviewManagementLinq
             management.TopRecords(productReview);
             //UC3 Retrieve All data from list who's rating is greater than 3 and productid is 1 or 4 or 9
             management.SelectRecords(productReview);
+            /// UC4 Retrieve Count of review present for each productid
+            management.RetrieveCountOfRecords(productReview);
         }
     }
 }

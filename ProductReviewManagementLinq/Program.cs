@@ -28,6 +28,10 @@ namespace ProductReviewManagementLinq
                 Console.WriteLine("ProductId:" + list.ProductId + "\tUserId:" + list.UserId + "\tRating:" +
                                    list.Rating + "\tReview:" + list.Rating + "\tisLike:" + list.isLike);
             }
+
+            Management management = new Management();
+            /// UC2 Retrieve Top 3 records from list who's rating is high
+            management.TopRecords(productReview);
         }
     }
 }

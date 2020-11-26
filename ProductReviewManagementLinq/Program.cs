@@ -32,6 +32,8 @@ namespace ProductReviewManagementLinq
             Management management = new Management();
             /// UC2 Retrieve Top 3 records from list who's rating is high
             management.TopRecords(productReview);
+            //UC3 Retrieve All data from list who's rating is greater than 3 and productid is 1 or 4 or 9
+            management.SelectRecords(productReview);
         }
     }
 }

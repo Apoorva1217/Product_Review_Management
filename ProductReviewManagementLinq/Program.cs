@@ -42,6 +42,8 @@ namespace ProductReviewManagementLinq
             management.SkipTopRecords(productReview);
             /// UC8 Create DataTable and add ProductId,UserId,Rating,Review and isLike fields
             management.InsertValuesInDataTable(productReview);
+            /// UC9 Retrieve All Records from datatable who's isLike value is true
+            management.RetrieveDataFromTable();
         }
     }
 }

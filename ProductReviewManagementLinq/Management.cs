@@ -8,6 +8,7 @@ namespace ProductReviewManagementLinq
 {
     public class Management
     {
+        DataTable dataTable = new DataTable();
         /// <summary>
         /// UC2 Retrieve Top 3 records from list who's rating is high
         /// </summary>
@@ -106,6 +107,22 @@ namespace ProductReviewManagementLinq
             dataTable.Rows.Add(7, 8, 3, "Average", true);
             dataTable.Rows.Add(8, 9, 5, "Good", true);
             dataTable.Rows.Add(4, 10, 4, "Nice", true);
+        }
+
+        /// <summary>
+        /// UC9 Retrieve All Records from datatable who's isLike value is true
+        /// </summary>
+        public void RetrieveDataFromTable()
+        {
+            var records = from products in dataTable.AsEnumerable()
+                          where (products.Field<bool>("isLike") == true)
+                          select products;
+            foreach (var data in records)
+            {
+                Console.WriteLine("ProductId:" + data.Field<int>("ProductId") + "\tUserId:" + data.Field<int>("UserId") +
+                    "\tRating:" + data.Field<double>("Rating") + "\tReview:" + data.Field<string>("Review") +
+                    "\tisLike:" + data.Field<bool>("isLike"));
+            }
         }
     }
 }
